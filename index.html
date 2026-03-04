@@ -1,0 +1,1350 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On The Level Builders | Precision Construction &amp; General Contracting</title>
+    <meta name="description"
+        content="Premier builders specializing in custom residential construction, complex high-detail builds, and government projects.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        makita: '#e8a020',
+                        silver: '#c8c8c8',
+                        darker: '#0d0d0d',
+                        dark: '#111111',
+                        darkline: '#2a2a2a',
+                        darktext: '#8a8a8a',
+                        lighttext: '#f0f0f0',
+                        darkhover: '#141414'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Inter:wght@200;300;400;500&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        /* Custom Font Assignments */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .serif {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar for Webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+
+        /* Subtle Fade In Animation */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 35s linear infinite;
+        }
+
+        .hover-pause:hover .animate-marquee {
+            animation-play-state: paused;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        /* ─── Soft Dividers & Subtle Card Shadows ─────────────────────────────
+           Replace hard section borders with barely-visible shadows.
+           Cards get a soft glow instead of a hard line.
+        ─────────────────────────────────────────────────────────────────────── */
+
+        /* Section-level borders: almost invisible */
+        section,
+        header,
+        footer {
+            border-color: transparent !important;
+            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
+        }
+
+        .dark section,
+        .dark header,
+        .dark footer {
+            box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.03);
+        }
+
+        /* Portfolio image wrappers & article cards: soft shadow, no hard border */
+        .border.border-stone-200,
+        .border.dark\:border-darkline {
+            border-color: transparent !important;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .dark .border.border-stone-200,
+        .dark .border.dark\:border-darkline {
+            box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.04);
+        }
+
+        /* Service & portfolio cards on hover: keep the gold accent border */
+        .group:hover .border.border-stone-200,
+        .group:hover .border.dark\:border-darkline {
+            box-shadow: 0 4px 20px 0 rgba(232, 160, 32, 0.12), 0 0 0 1px rgba(232, 160, 32, 0.35);
+        }
+
+        /* Nav bar bottom border: very subtle */
+        nav {
+            border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+            border-bottom-width: 1px;
+        }
+
+        .dark nav {
+            border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* ─── Mobile: Service Card Tap-to-Expand ────────────────────────────── */
+        @keyframes chevronBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(3px);
+                opacity: 1;
+            }
+        }
+
+        .card-expand-hint {
+            animation: chevronBounce 1.8s ease-in-out infinite;
+        }
+
+        /* When card is expanded via tap on mobile */
+        .card-expanded .card-body {
+            grid-template-rows: 1fr !important;
+        }
+
+        .card-expanded .card-expand-hint {
+            transform: rotate(180deg);
+            animation: none;
+            opacity: 0.7;
+        }
+
+        .card-expanded {
+            border-color: rgba(232, 160, 32, 0.3) !important;
+            box-shadow: 0 4px 20px 0 rgba(232, 160, 32, 0.1), 0 0 0 1px rgba(232, 160, 32, 0.25) !important;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-stone-50 text-stone-900 transition-colors duration-300 dark:bg-darker dark:text-lighttext antialiased selection:bg-stone-200 dark:selection:bg-darkline selection:text-makita">
+
+    <!-- Subtle Global Background Watermark (transparent PNG) -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none" style="
+            background-image: url('artesemiuk_transparent.png');
+            background-size: 90% auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.12;
+        ">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-darker/70 backdrop-blur-md border-b border-stone-200 dark:border-darkline transition-all duration-300"
+        style="transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s;">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo%20mic%20transparent.png" alt="Artsemiuk Project Logo"
+                    class="h-8 md:h-10 object-contain transition-transform duration-300 group-hover:scale-105 dark:invert-0 invert opacity-90">
+                <span
+                    class="uppercase tracking-widest text-xs font-semibold text-stone-900 dark:text-lighttext group-hover:text-makita dark:group-hover:text-makita transition-colors">ARTSEMIUK
+                    PROJECT</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#about"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-about">Over
+                    Ons</a>
+                <a href="#experience"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-team">Team</a>
+                <a href="#services"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-services">Diensten</a>
+                <a href="#portfolio"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-portfolio">Realisaties</a>
+
+                <div class="h-4 w-px bg-stone-300 dark:bg-darkline"></div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle"
+                        class="text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors flex items-center">
+                        <iconify-icon icon="lucide:moon" width="16" class="dark:hidden"></iconify-icon>
+                        <iconify-icon icon="lucide:sun" width="16" class="hidden dark:block"></iconify-icon>
+                    </button>
+
+                    <!-- Lang Dropdown -->
+                    <div class="relative group">
+                        <button id="langBtn"
+                            class="text-[10px] font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-widest flex items-center gap-1">
+                            NL <iconify-icon icon="lucide:chevron-down" width="12"></iconify-icon>
+                        </button>
+                        <div id="langDropdown"
+                            class="absolute right-0 top-full mt-2 w-24 bg-white dark:bg-darkhover border border-stone-200 dark:border-darkline rounded-sm shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <button
+                                class="w-full text-left px-4 py-2 text-xs text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext hover:bg-stone-50 dark:hover:bg-darkline transition-colors"
+                                onclick="translatePage('nl')">NL</button>
+                            <button
+                                class="w-full text-left px-4 py-2 text-xs text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext hover:bg-stone-50 dark:hover:bg-darkline transition-colors"
+                                onclick="translatePage('fr')">FR</button>
+                            <button
+                                class="w-full text-left px-4 py-2 text-xs text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext hover:bg-stone-50 dark:hover:bg-darkline transition-colors"
+                                onclick="translatePage('en')">EN</button>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact"
+                    class="px-5 py-2.5 bg-makita text-black text-xs uppercase tracking-wide font-bold hover:bg-white hover:text-black transition-colors duration-300 flex items-center gap-2">
+                    <span data-i18n="nav-quote">OFFERTE</span> <iconify-icon icon="lucide:arrow-right"
+                        width="14"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- Mobile: Hamburger + Quick Controls -->
+            <div class="lg:hidden flex items-center gap-2">
+                <!-- Lang Switcher Mobile (inline, always visible) -->
+                <div class="flex items-center gap-1 text-[10px] font-bold uppercase tracking-widest">
+                    <button onclick="translatePage('nl')"
+                        class="text-stone-900 dark:text-lighttext hover:text-makita transition-colors">NL</button>
+                    <span class="text-stone-300 dark:text-darkline opacity-50">|</span>
+                    <button onclick="translatePage('fr')"
+                        class="text-stone-500 dark:text-darktext hover:text-makita transition-colors">FR</button>
+                    <span class="text-stone-300 dark:text-darkline opacity-50">|</span>
+                    <button onclick="translatePage('en')"
+                        class="text-stone-500 dark:text-darktext hover:text-makita transition-colors">EN</button>
+                </div>
+                <!-- Theme Toggle Mobile -->
+                <button id="themeToggleMobile"
+                    class="text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors flex items-center px-1">
+                    <iconify-icon icon="lucide:moon" width="18" class="dark:hidden"></iconify-icon>
+                    <iconify-icon icon="lucide:sun" width="18" class="hidden dark:block"></iconify-icon>
+                </button>
+                <!-- Hamburger -->
+                <button id="mobileMenuBtn"
+                    class="text-stone-900 dark:text-lighttext hover:text-makita dark:hover:text-makita transition-colors">
+                    <iconify-icon icon="lucide:menu" width="24" height="24" id="menuIcon"></iconify-icon>
+                    <iconify-icon icon="lucide:x" width="24" height="24" id="closeIcon" class="hidden"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Slide-Down Menu Panel -->
+        <div id="mobileMenuPanel"
+            class="hidden lg:hidden bg-white/95 dark:bg-darker/95 backdrop-blur-md border-t border-stone-200 dark:border-darkline px-6 py-6">
+            <div class="flex flex-col gap-5">
+                <a href="#about" onclick="closeMobileMenu()"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-about">Over Ons</a>
+                <a href="#experience" onclick="closeMobileMenu()"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-team">Team</a>
+                <a href="#services" onclick="closeMobileMenu()"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-services">Diensten</a>
+                <a href="#portfolio" onclick="closeMobileMenu()"
+                    class="text-sm font-medium text-stone-500 dark:text-darktext hover:text-stone-900 dark:hover:text-lighttext transition-colors uppercase tracking-wide"
+                    data-i18n="nav-portfolio">Realisaties</a>
+
+                <div class="h-px w-full bg-stone-200 dark:bg-darkline"></div>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center gap-3">
+                    <span class="text-xs text-stone-400 dark:text-darktext uppercase tracking-widest">Taal:</span>
+                    <button onclick="translatePage('nl'); closeMobileMenu()"
+                        class="text-xs font-bold uppercase tracking-widest text-stone-900 dark:text-lighttext hover:text-makita transition-colors">NL</button>
+                    <span class="text-stone-300 dark:text-darkline">|</span>
+                    <button onclick="translatePage('fr'); closeMobileMenu()"
+                        class="text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-darktext hover:text-makita transition-colors">FR</button>
+                    <span class="text-stone-300 dark:text-darkline">|</span>
+                    <button onclick="translatePage('en'); closeMobileMenu()"
+                        class="text-xs font-bold uppercase tracking-widest text-stone-500 dark:text-darktext hover:text-makita transition-colors">EN</button>
+                </div>
+
+                <a href="#contact" onclick="closeMobileMenu()"
+                    class="inline-flex items-center justify-center h-12 px-6 bg-makita text-black text-xs uppercase tracking-wide font-bold hover:bg-white hover:text-black transition-colors gap-2">
+                    <span data-i18n="nav-quote">OFFERTE</span> <iconify-icon icon="lucide:arrow-right"
+                        width="14"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&amp;w=2700&amp;auto=format&amp;fit=crop"
+                alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-stone-50/50 dark:bg-darker/50"></div>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-stone-50 dark:from-darker via-transparent to-transparent">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center md:text-left w-full mt-20">
+            <div class="md:max-w-3xl fade-in-up">
+                <p class="text-stone-500 dark:text-darktext text-xs md:text-sm uppercase tracking-[0.2em] mb-4 font-bold"
+                    data-i18n="hero-badge">8+ jaar · 3 teams
+                    · heel België</p>
+                <h1
+                    class="text-6xl md:text-8xl lg:text-9xl text-stone-900 dark:text-lighttext font-normal leading-none tracking-tight mb-6">
+                    <span data-i18n="hero-h1-1">WIJ BOUWEN</span> <br>
+                    <span class="text-[#e8a020]" data-i18n="hero-h1-2">SYSTEMEN.</span>
+                </h1>
+                <p class="text-stone-500 dark:text-darktext text-lg md:text-xl font-light leading-relaxed max-w-xl mb-10"
+                    data-i18n="hero-subtext">
+                    Geen quick fixes. Geen compromissen. <br>
+                    Elektriciteit · Ventilatie · Renovatie · Gevelwerken
+                </p>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center h-12 px-8 bg-[#e8a020] text-black text-sm uppercase tracking-wide font-bold hover:bg-white transition-colors rounded-sm">
+                        <span data-i18n="hero-btn-1">GRATIS OFFERTE</span> <iconify-icon icon="lucide:arrow-right"
+                            class="ml-2" width="16"></iconify-icon>
+                    </a>
+                    <a href="#portfolio"
+                        class="inline-flex items-center justify-center h-12 px-8 border border-stone-900/30 text-stone-900 dark:border-white/30 dark:text-white backdrop-blur-md text-sm uppercase tracking-wide font-medium hover:bg-stone-900/10 dark:hover:bg-white/10 transition-colors rounded-sm"
+                        data-i18n="hero-btn-2">
+                        BEKIJK ONS WERK
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce hidden md:block text-white/50 z-10">
+            <iconify-icon icon="lucide:arrow-down" width="24"></iconify-icon>
+        </div>
+
+        <!-- Infinite Trust Strip Marquee (Moved inside Hero) -->
+        <div
+            class="absolute bottom-0 left-0 w-full bg-[#e8a020] border-t border-stone-400/20 dark:border-silver/20 py-3 z-20 overflow-hidden flex items-center">
+            <div class="animate-marquee whitespace-nowrap flex items-center hover-pause">
+                <!-- Group 1 -->
+                <div class="flex items-center text-black text-xs md:text-sm uppercase tracking-widest font-bold pr-12">
+                    <iconify-icon icon="lucide:shield-check" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-1">VCA Gecertificeerd voor veilig werken</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:users" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-2">3 Volledig uitgeruste teams beschikbaar</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:map-pin" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-3">Actief in heel België (Vlaanderen & Brussel)</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:globe" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-4">Projecten in Nederland (regio Zuid)</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:check-square" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-5">Uitgevoerd volgens AREI & Belgische normen</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:award" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-6">Meer dan 8 jaar ervaring in de bouwsector</span>
+                </div>
+                <!-- Group 2 (Duplicate for seamless loop) -->
+                <div class="flex items-center text-black text-xs md:text-sm uppercase tracking-widest font-bold pr-12">
+                    <iconify-icon icon="lucide:shield-check" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-1">VCA Gecertificeerd voor veilig werken</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:users" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-2">3 Volledig uitgeruste teams beschikbaar</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:map-pin" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-3">Actief in heel België (Vlaanderen & Brussel)</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:globe" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-4">Projecten in Nederland (regio Zuid)</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:check-square" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-5">Uitgevoerd volgens AREI & Belgische normen</span>
+
+                    <span class="mx-6 opacity-30">•</span>
+                    <iconify-icon icon="lucide:award" class="mr-2" width="18"></iconify-icon>
+                    <span data-i18n="trust-mq-6">Meer dan 8 jaar ervaring in de bouwsector</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Intro / Philosophy Section -->
+    <section id="about" class="pt-24 md:pt-32 pb-16 bg-stone-50/70 dark:bg-darker/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+                <span class="block text-[#e8a020] text-xs uppercase tracking-widest mb-4 font-bold"
+                    data-i18n="phil-label">ONZE AANPAK</span>
+                <h2
+                    class="text-4xl md:text-5xl font-normal text-stone-900 dark:text-lighttext leading-none tracking-wide mb-6">
+                    <span data-i18n="phil-h2-1">PRECIZIE OP ELK DETAIL,</span> <br>
+                    <span class="text-stone-500 dark:text-darktext" data-i18n="phil-h2-2">SYSTEMEN DIE BLIJVEN.</span>
+                </h2>
+            </div>
+            <div class="space-y-6 pt-2 border-l border-stone-200 dark:border-darkline pl-8">
+                <p class="text-stone-900 dark:text-lighttext leading-relaxed font-light text-xl italic"
+                    data-i18n="phil-quote">
+                    "Wij leggen geen draden — wij bouwen systemen die blijven. Precies werk, heldere structuur, en
+                    volledige verantwoordelijkheid van begin tot einde."
+                </p>
+                <div class="flex items-center gap-4 mt-6">
+                    <div class="h-px w-8 bg-[#e8a020]"></div>
+                    <span class="text-sm font-bold uppercase tracking-widest text-stone-400 dark:text-silver">— Maksim
+                        Artsemiuk</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Over Het Bedrijf Section -->
+    <section id="experience"
+        class="py-24 bg-stone-50/70 dark:bg-darker/70 backdrop-blur-md border-y border-transparent dark:border-transparent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                <!-- Narrative Side -->
+                <div class="space-y-8 max-w-xl mx-auto md:mx-0">
+                    <div>
+                        <span class="block text-[#e8a020] text-xs uppercase tracking-widest mb-4 font-bold"
+                            data-i18n="exp-label">OVER HET
+                            BEDRIJF</span>
+                        <h2 class="text-4xl md:text-5xl font-normal text-stone-900 dark:text-lighttext tracking-wide"
+                            data-i18n="exp-h2">
+                            ARTSEMIUK PROJECT</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <p class="text-stone-500 dark:text-darktext font-light leading-relaxed text-lg"
+                            data-i18n="exp-desc">
+                            Gebouwd op discipline en gedreven door precisie. Artsemiuk Project is niet zomaar een
+                            bouwbedrijf; wij zijn een georganiseerde structuur die gespecialiseerd is in hoogwaardige
+                            renovaties en technische installaties in heel België. Met 8 jaar ervaring en een
+                            'no-nonsense' mentaliteit transformeren wij complexe bouwplannen in tastbare resultaten.
+                        </p>
+                        <p class="text-stone-900 dark:text-lighttext font-light leading-relaxed text-lg border-l-2 border-[#e8a020] pl-6 italic"
+                            data-i18n="exp-focus">
+                            Wij geloven dat een sterke afwerking begint bij een perfecte planning. Daarom werken wij
+                            uitsluitend met eigen gecertificeerde teams en professioneel materieel, zodat elke deadline
+                            een belofte is die we nakomen.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Highlights Side -->
+                <div>
+                    <div
+                        class="bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline p-10 md:p-12 rounded-sm shadow-2xl">
+                        <ul class="space-y-6 leading-loose">
+                            <li class="flex items-start gap-4">
+                                <iconify-icon icon="lucide:shield-check" class="text-[#e8a020] mt-1 shrink-0"
+                                    width="20"></iconify-icon>
+                                <span class="text-base text-stone-900 dark:text-lighttext font-light"
+                                    data-i18n="exp-li-1">AREI-conformiteit
+                                    & VCA-normen</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <iconify-icon icon="lucide:users" class="text-[#e8a020] mt-1 shrink-0"
+                                    width="20"></iconify-icon>
+                                <span class="text-base text-stone-900 dark:text-lighttext font-light"
+                                    data-i18n="exp-li-2">3 Gecertificeerde
+                                    ploegen direct inzetbaar</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <iconify-icon icon="lucide:settings" class="text-[#e8a020] mt-1 shrink-0"
+                                    width="20"></iconify-icon>
+                                <span class="text-base text-stone-900 dark:text-lighttext font-light"
+                                    data-i18n="exp-li-3">Gebruik van
+                                    premium systemen (Duco, Renson, Makita)</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <iconify-icon icon="lucide:map" class="text-[#e8a020] mt-1 shrink-0"
+                                    width="20"></iconify-icon>
+                                <span class="text-base text-stone-900 dark:text-lighttext font-light"
+                                    data-i18n="exp-li-4">Actief in
+                                    Vlaanderen, Brussel & Zuid-Nederland</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-10 pt-10 border-t border-stone-200 dark:border-darkline">
+                            <div class="grid grid-cols-3 gap-6">
+                                <div class="flex flex-col text-center">
+                                    <span class="text-5xl text-[#e8a020] serif tracking-wide mb-2">8+</span>
+                                    <span
+                                        class="text-xs uppercase tracking-widest text-stone-500 dark:text-darktext serif"
+                                        data-i18n="exp-stat-1">Jaren Ervaring</span>
+                                </div>
+                                <div class="flex flex-col text-center border-x border-stone-200 dark:border-darkline">
+                                    <span class="text-5xl text-[#e8a020] serif tracking-wide mb-2">3</span>
+                                    <span
+                                        class="text-xs uppercase tracking-widest text-stone-500 dark:text-darktext serif"
+                                        data-i18n="exp-stat-2">Volledige Teams</span>
+                                </div>
+                                <div class="flex flex-col text-center">
+                                    <span class="text-5xl text-[#e8a020] serif tracking-wide mb-2">100%</span>
+                                    <span
+                                        class="text-xs uppercase tracking-widest text-stone-500 dark:text-darktext serif"
+                                        data-i18n="exp-stat-3">Constante Investering in Tools</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-stone-50/70 dark:bg-darker/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 md:flex justify-between items-end">
+                <div class="max-w-xl">
+                    <span class="block text-[#e8a020] text-xs uppercase tracking-widest mb-4 font-bold"
+                        data-i18n="srv-label">ONZE
+                        EXPERTISE</span>
+                    <h2 class="text-4xl md:text-5xl font-normal text-stone-900 dark:text-lighttext tracking-wide"
+                        data-i18n="srv-h2">
+                        Diensten</h2>
+                </div>
+                <a href="#contact"
+                    class="hidden md:flex items-center gap-2 text-sm font-medium text-[#e8a020] hover:text-white transition-colors">
+                    <span data-i18n="srv-btn">Offerte aanvragen</span> <iconify-icon
+                        icon="lucide:arrow-right"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rând 1 -->
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col cursor-pointer">
+                    <iconify-icon icon="lucide:zap" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-1-h3">
+                        Elektrische Installaties & Domotica</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-1-p">A tot Z ·
+                        Belgische normen</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-1-desc">
+                                Millimeterprecisie met strikte naleving van de Belgische AREI-normen. Van complete
+                                bekabeling en strak georganiseerde verdeelborden tot verlichting en domotica. Geen
+                                slordige kabels, alleen absolute veiligheid en efficiëntie voor residentiële of
+                                commerciële projecten.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col cursor-pointer">
+                    <iconify-icon icon="lucide:wind" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-2-h3">
+                        Ventilatiesystemen</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-2-p">DUCO · Renson C+
+                        · Ubiflux</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-2-desc">
+                                Luchtkwaliteit is geen luxe, het is een noodzaak. Wij installeren premium
+                                ventilatiesystemen (DUCO, Renson C+, Ubiflux) die condensatie voorkomen, schimmel
+                                uitsluiten en het energieverbruik van het gebouw optimaliseren. Onzichtbare oplossingen
+                                die uw investering op lange termijn beschermen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col cursor-pointer">
+                    <iconify-icon icon="lucide:layout-panel-top" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-3-h3">
+                        Interieurafwerking</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-3-p">Montage wanden ·
+                        plafonds</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-3-desc">
+                                Wij transformeren een ruwe structuur in een perfect canvas. Gespecialiseerd in
+                                Gyproc-installatie, pleister- en plamuurwerk volgens de hoogste normen. Wij garanderen
+                                superstrakke oppervlakken, perfect klaar voor verf of behang. Onze teams laten de werf
+                                elke dag netjes achter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 Original -->
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col cursor-pointer">
+                    <iconify-icon icon="lucide:briefcase" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-4-h3">
+                        Onderaanneming</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-4-p">B2B
+                        Partnerschappen</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-4-desc">
+                                Bent u een hoofdaannemer op zoek naar betrouwbare vakmensen? Wij zijn een volledig
+                                uitgeruste structuur (eigen wagens en gereedschap), open voor langdurige samenwerkingen
+                                in Vlaanderen en Brussel. Wij nemen grote volumes aan, met respect voor strikte
+                                deadlines en kwaliteitsnormen.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rând 2 -->
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col mt-4 lg:mt-0 cursor-pointer">
+                    <iconify-icon icon="lucide:bath" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-5-h3">
+                        Badkamerrenovatie</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-5-p">Van A tot Z</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-5-desc">
+                                Wij transformeren uw badkamer van een technische ruimte naar een comfortzone. Wij
+                                regelen intern het hele proces: afbraak, waterdichting, sanitair, vochtwerende Gyproc en
+                                vlekkeloos tegelwerk. Geen excuses, met slechts één verantwoordelijk team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col mt-4 lg:mt-0 cursor-pointer">
+                    <iconify-icon icon="lucide:grid" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-6-h3">
+                        Vloeren & Schrijnwerk</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-6-p">Tegels ·
+                        Laminaat · Deuren</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-6-desc">
+                                Precisie bij elke naad. Wij plaatsen tegels, laminaat, PVC en zorgen voor de
+                                professionele installatie van deuren en ramen. We gebruiken precisiegereedschap voor
+                                perfecte sneden en afwerkingen die bestand zijn tegen intensief gebruik en de tand des
+                                tijds.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col mt-4 lg:mt-0 cursor-pointer">
+                    <iconify-icon icon="lucide:home" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-7-h3">
+                        Gevels & Daken</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-7-p">Isolatie ·
+                        Plastering · Dak</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-7-desc">
+                                Wij beschermen het gebouw van buiten naar binnen. Onze 3 teams voeren complete dakwerken
+                                en hoogwaardige gevelisolatie uit. We stoppen warmteverlies en geven het gebouw een
+                                moderne, weerbestendige uitstraling, perfect bestand tegen het onvoorspelbare Belgische
+                                klimaat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group p-6 bg-stone-100 dark:bg-darkhover border border-stone-200 dark:border-darkline hover:border-[#e8a020] transition-all duration-300 rounded-sm flex flex-col mt-4 lg:mt-0 cursor-pointer">
+                    <iconify-icon icon="lucide:building" width="24" class="text-[#e8a020] mb-4"></iconify-icon>
+                    <h3 class="text-2xl serif font-medium text-stone-900 dark:text-lighttext mb-2 uppercase"
+                        data-i18n="srv-8-h3">
+                        Totaalrenovatie</h3>
+                    <p class="text-stone-500 dark:text-darktext font-light text-sm" data-i18n="srv-8-p">Complete
+                        Projecten</p>
+                    <div
+                        class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
+                        <div class="overflow-hidden">
+                            <p class="pt-4 mt-4 border-t border-stone-200 dark:border-darkline text-stone-500 dark:text-darktext text-xs leading-relaxed"
+                                data-i18n="srv-8-desc">
+                                Neem de controle over uw tijd terug. Met 3 volledig uitgeruste teams beheren wij
+                                complete renovaties voor appartementen en huizen. We synchroniseren de werkfasen perfect
+                                – van bekabeling tot de laatste verflaag – en garanderen een sleutelklare oplevering
+                                strikt volgens schema.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio"
+        class="py-24 bg-stone-50/70 dark:bg-darker/70 backdrop-blur-md border-t border-transparent dark:border-transparent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="block text-[#e8a020] text-xs uppercase tracking-widest mb-4 font-bold"
+                    data-i18n="port-label">ONZE
+                    REALISATIES</span>
+                <h2 class="text-4xl md:text-5xl serif font-normal text-stone-900 dark:text-lighttext tracking-wide"
+                    data-i18n="port-h2">
+                    Projecten</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden aspect-[4/3] rounded-sm mb-4 border border-stone-200 dark:border-darkline">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&amp;w=2070&amp;auto=format&amp;fit=crop"
+                            alt="Elektra Installatie"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-stone-50/0 dark:bg-darker/0 group-hover:bg-stone-50/20 dark:bg-darker/20 transition-colors duration-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl serif font-medium text-stone-900 dark:text-lighttext uppercase"
+                                data-i18n="port-1-h3">
+                                Nieuwbouw Villa Antwerpen
+                            </h3>
+                            <p class="text-stone-500 dark:text-darktext text-sm mt-1" data-i18n="port-1-p">Compleet
+                                Elektra · Smart Home
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group cursor-pointer md:mt-16">
+                    <div
+                        class="relative overflow-hidden aspect-[4/3] rounded-sm mb-4 border border-stone-200 dark:border-darkline">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&amp;w=1974&amp;auto=format&amp;fit=crop"
+                            alt="Badkamer Renovatie"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale-[20%]">
+                        <div
+                            class="absolute inset-0 bg-stone-50/0 dark:bg-darker/0 group-hover:bg-stone-50/20 dark:bg-darker/20 transition-colors duration-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl serif font-medium text-stone-900 dark:text-lighttext uppercase"
+                                data-i18n="port-2-h3">
+                                Badkamer Renovatie Gent</h3>
+                            <p class="text-stone-500 dark:text-darktext text-sm mt-1" data-i18n="port-2-p">Grote Tegels
+                                · Inloopdouche</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden aspect-[4/3] rounded-sm mb-4 border border-stone-200 dark:border-darkline">
+                        <img src="professional-overalls-with-tools-background-repair-site-home-renovation-concept.jpg"
+                            alt="Gyproc Werken"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-stone-50/0 dark:bg-darker/0 group-hover:bg-stone-50/20 dark:bg-darker/20 transition-colors duration-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl serif font-medium text-stone-900 dark:text-lighttext uppercase"
+                                data-i18n="port-3-h3">Plafond
+                                Systemen Brussel</h3>
+                            <p class="text-stone-500 dark:text-darktext text-sm mt-1" data-i18n="port-3-p">Gyproc · LED
+                                Integratie</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group cursor-pointer md:mt-16">
+                    <div
+                        class="relative overflow-hidden aspect-[4/3] rounded-sm mb-4 border border-stone-200 dark:border-darkline">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&amp;w=1974&amp;auto=format&amp;fit=crop"
+                            alt="Totaal Renovatie"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-stone-50/0 dark:bg-darker/0 group-hover:bg-stone-50/20 dark:bg-darker/20 transition-colors duration-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-xl serif font-medium text-stone-900 dark:text-lighttext uppercase"
+                                data-i18n="port-4-h3">Zolder
+                                Renovatie Aalst</h3>
+                            <p class="text-stone-500 dark:text-darktext text-sm mt-1" data-i18n="port-4-p">Isolatie ·
+                                Afwerking A-Z</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <span
+                    class="inline-flex items-center gap-2 text-stone-500 dark:text-darktext text-sm font-medium border-b border-stone-500 dark:border-darktext pb-1 uppercase tracking-widest cursor-default"
+                    data-i18n="port-all">
+                    ONZE PROJECTEN
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Trust Section -->
+    <section class="py-24 bg-[#e8a020]/90 backdrop-blur-md text-black overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6">
+            <!-- Slider wrapper -->
+            <div id="testiSlider" class="relative">
+                <!-- Slides -->
+                <div class="testi-slides overflow-hidden">
+                    <div class="testi-track flex transition-transform duration-700 ease-in-out">
+
+                        <!-- Slide 1 -->
+                        <div class="testi-slide min-w-full text-center px-4">
+                            <iconify-icon icon="lucide:quote" width="32"
+                                class="text-black/50 mb-8 mx-auto"></iconify-icon>
+                            <blockquote class="text-2xl md:text-3xl serif leading-relaxed mb-10 text-black font-medium"
+                                data-i18n="testi-1-quote">
+                                "We zochten een ploeg die niet alleen kabels kon trekken, maar met ons mee dacht. Maksim
+                                en zijn team leverden een perfect uitgelijnd ventilatie- en elektriciteitssysteem op."
+                            </blockquote>
+                            <cite class="not-italic flex flex-col items-center">
+                                <span class="text-sm font-bold tracking-wide uppercase">Thomas V.</span>
+                                <span class="text-black/70 text-xs mt-1" data-i18n="testi-1-author">Particuliere Klant ·
+                                    Totaalrenovatie</span>
+                            </cite>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="testi-slide min-w-full text-center px-4">
+                            <iconify-icon icon="lucide:quote" width="32"
+                                class="text-black/50 mb-8 mx-auto"></iconify-icon>
+                            <blockquote class="text-2xl md:text-3xl serif leading-relaxed mb-10 text-black font-medium"
+                                data-i18n="testi-2-quote">
+                                "Voor onze villa in Antwerpen was precisie essentieel. De integratie van Smart Home en
+                                de AREI-conforme elektra is vlekkeloos uitgevoerd door de 3 teams van Artsemiuk."
+                            </blockquote>
+                            <cite class="not-italic flex flex-col items-center">
+                                <span class="text-sm font-bold tracking-wide uppercase">Laura &amp; Pieter D.</span>
+                                <span class="text-black/70 text-xs mt-1" data-i18n="testi-2-author">Particuliere Klant ·
+                                    Nieuwbouw Villa Antwerpen</span>
+                            </cite>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="testi-slide min-w-full text-center px-4">
+                            <iconify-icon icon="lucide:quote" width="32"
+                                class="text-black/50 mb-8 mx-auto"></iconify-icon>
+                            <blockquote class="text-2xl md:text-3xl serif leading-relaxed mb-10 text-black font-medium"
+                                data-i18n="testi-3-quote">
+                                "De afwerking van de grote tegels in onze inloopdouche is werkelijk 'strak'. Ze werken
+                                zeer schoon en professioneel, precies wat je verwacht van ervaren vakmensen."
+                            </blockquote>
+                            <cite class="not-italic flex flex-col items-center">
+                                <span class="text-sm font-bold tracking-wide uppercase">Hanne M.</span>
+                                <span class="text-black/70 text-xs mt-1" data-i18n="testi-3-author">Particuliere Klant ·
+                                    Badkamer Renovatie Gent</span>
+                            </cite>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="testi-slide min-w-full text-center px-4">
+                            <iconify-icon icon="lucide:quote" width="32"
+                                class="text-black/50 mb-8 mx-auto"></iconify-icon>
+                            <blockquote class="text-2xl md:text-3xl serif leading-relaxed mb-10 text-black font-medium"
+                                data-i18n="testi-4-quote">
+                                "Professionele Gyproc-werken met naadloze LED-integratie. Het resultaat in ons kantoor
+                                in Brussel is indrukwekkend. Je merkt direct de 8 jaar ervaring van Maksim."
+                            </blockquote>
+                            <cite class="not-italic flex flex-col items-center">
+                                <span class="text-sm font-bold tracking-wide uppercase">Marc &amp; Sophie K.</span>
+                                <span class="text-black/70 text-xs mt-1" data-i18n="testi-4-author">Professionele Klant
+                                    · Plafond Systemen Brussel</span>
+                            </cite>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Dot Navigation -->
+                <div class="flex justify-center gap-2 mt-10" id="testiDots">
+                    <button class="testi-dot w-2 h-2 rounded-full bg-black/50 transition-all duration-300 active"
+                        data-slide="0"></button>
+                    <button class="testi-dot w-2 h-2 rounded-full bg-black/50 transition-all duration-300"
+                        data-slide="1"></button>
+                    <button class="testi-dot w-2 h-2 rounded-full bg-black/50 transition-all duration-300"
+                        data-slide="2"></button>
+                    <button class="testi-dot w-2 h-2 rounded-full bg-black/50 transition-all duration-300"
+                        data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .testi-dot.active {
+                background: rgba(0, 0, 0, 0.9);
+                transform: scale(1.5);
+            }
+        </style>
+
+        <script>
+                (function () {
+                    const track = document.querySelector('.testi-track');
+                    const dots = document.querySelectorAll('.testi-dot');
+                    let current = 0;
+                    let timer;
+
+                    function goTo(idx) {
+                        current = idx;
+                        track.style.transform = `translateX(-${idx * 100}%)`;
+                        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+                    }
+
+                    dots.forEach(d => d.addEventListener('click', () => {
+                        clearInterval(timer);
+                        goTo(parseInt(d.dataset.slide));
+                        startTimer();
+                    }));
+
+                    function startTimer() {
+                        timer = setInterval(() => goTo((current + 1) % 4), 5000);
+                    }
+                    startTimer();
+                })();
+        </script>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 bg-stone-50/70 dark:bg-darker/70 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16">
+
+            <div class="md:col-span-4 flex flex-col justify-center">
+                <span class="block text-[#e8a020] text-xs uppercase tracking-widest mb-4 font-bold"
+                    data-i18n="contact-label">CONTACT</span>
+                <h2 class="text-5xl serif font-normal text-stone-900 dark:text-lighttext tracking-wide mb-6"
+                    data-i18n="contact-h2">
+                    START UW PROJECT</h2>
+                <div class="space-y-4">
+                    <p class="text-stone-900 dark:text-lighttext text-xl font-medium tracking-wide"
+                        data-i18n="contact-tagline">
+                        Laten we bouwen.
+                    </p>
+                    <p class="text-stone-500 dark:text-darktext font-light leading-relaxed text-sm"
+                        data-i18n="contact-desc">
+                        Wij zijn beschikbaar voor nieuwe projecten. Vraag vrijblijvend een offerte aan.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="md:col-span-8 bg-stone-100/50 dark:bg-darkhover/50 p-8 md:p-12 rounded-sm shadow-sm border border-stone-200 dark:border-darkline backdrop-blur-sm">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label for="firstName"
+                                class="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-darktext"
+                                data-i18n="form-firstname">Voornaam</label>
+                            <input type="text" id="firstName"
+                                class="w-full bg-stone-50 dark:bg-darker border border-stone-200 dark:border-darkline rounded-sm px-4 py-3 text-stone-900 dark:text-lighttext text-sm focus:outline-none focus:border-[#e8a020] transition-all placeholder:text-stone-300 dark:text-darkline"
+                                data-i18n-placeholder="form-firstname-ph" placeholder="Uw voornaam">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="lastName"
+                                class="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-darktext"
+                                data-i18n="form-lastname">Achternaam</label>
+                            <input type="text" id="lastName"
+                                class="w-full bg-stone-50 dark:bg-darker border border-stone-200 dark:border-darkline rounded-sm px-4 py-3 text-stone-900 dark:text-lighttext text-sm focus:outline-none focus:border-[#e8a020] transition-all placeholder:text-stone-300 dark:text-darkline"
+                                data-i18n-placeholder="form-lastname-ph" placeholder="Uw achternaam">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="email"
+                            class="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-darktext">Email</label>
+                        <input type="email" id="email"
+                            class="w-full bg-stone-50 dark:bg-darker border border-stone-200 dark:border-darkline rounded-sm px-4 py-3 text-stone-900 dark:text-lighttext text-sm focus:outline-none focus:border-[#e8a020] transition-all placeholder:text-stone-300 dark:text-darkline"
+                            data-i18n-placeholder="form-email-ph" placeholder="email@adres.be">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-darktext"
+                            data-i18n="form-type">Type
+                            Project</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="projectType" class="peer sr-only">
+                                <div class="w-full p-3 border border-stone-200 dark:border-darkline bg-stone-50 dark:bg-darker rounded-sm text-center text-xs uppercase tracking-wider text-stone-500 dark:text-darktext peer-checked:bg-[#e8a020] peer-checked:text-black peer-checked:border-[#e8a020] transition-all font-bold"
+                                    data-i18n="form-type-1">Elektriciteit</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="projectType" class="peer sr-only">
+                                <div class="w-full p-3 border border-stone-200 dark:border-darkline bg-stone-50 dark:bg-darker rounded-sm text-center text-xs uppercase tracking-wider text-stone-500 dark:text-darktext peer-checked:bg-[#e8a020] peer-checked:text-black peer-checked:border-[#e8a020] transition-all font-bold"
+                                    data-i18n="form-type-2">Ventilatie</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="projectType" class="peer sr-only">
+                                <div class="w-full p-3 border border-stone-200 dark:border-darkline bg-stone-50 dark:bg-darker rounded-sm text-center text-xs uppercase tracking-wider text-stone-500 dark:text-darktext peer-checked:bg-[#e8a020] peer-checked:text-black peer-checked:border-[#e8a020] transition-all font-bold"
+                                    data-i18n="form-type-3">Renovatie</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="projectType" class="peer sr-only">
+                                <div class="w-full p-3 border border-stone-200 dark:border-darkline bg-stone-50 dark:bg-darker rounded-sm text-center text-xs uppercase tracking-wider text-stone-500 dark:text-darktext peer-checked:bg-[#e8a020] peer-checked:text-black peer-checked:border-[#e8a020] transition-all font-bold"
+                                    data-i18n="form-type-4">Andere</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="message"
+                            class="text-xs font-semibold uppercase tracking-wide text-stone-500 dark:text-darktext"
+                            data-i18n="form-desc">Beschrijving</label>
+                        <textarea id="message" rows="4"
+                            class="w-full bg-stone-50 dark:bg-darker border border-stone-200 dark:border-darkline rounded-sm px-4 py-3 text-stone-900 dark:text-lighttext text-sm focus:outline-none focus:border-[#e8a020] transition-all placeholder:text-stone-300 dark:text-darkline resize-none"
+                            data-i18n-placeholder="form-desc-ph" placeholder="Vertel ons over uw project..."></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="button"
+                            class="w-full bg-[#e8a020] text-black font-bold text-sm py-4 rounded-sm uppercase tracking-wider hover:bg-white transition-all duration-300"
+                            data-i18n="form-submit">
+                            OFFERTE AANVRAGEN
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-stone-50/70 dark:bg-[#0a0a0a]/70 backdrop-blur-md text-stone-500 dark:text-darktext py-16 border-t border-transparent dark:border-transparent">
+        <div
+            class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-center lg:text-left">
+            <!-- Brand Column -->
+            <div class="lg:col-span-3">
+                <div class="flex items-center gap-2 mb-6 group justify-center lg:justify-start">
+                    <img src="logo%20mic%20transparent.png" alt="Artsemiuk Project Logo"
+                        class="h-6 md:h-8 object-contain transition-transform duration-300 group-hover:scale-105 dark:invert-0 invert opacity-80">
+                    <span
+                        class="uppercase tracking-widest text-xs font-semibold text-stone-900 dark:text-lighttext group-hover:text-[#e8a020] transition-colors">ARTSEMIUK
+                        PROJECT</span>
+                </div>
+                <p class="text-xs leading-relaxed text-stone-500 dark:text-darktext mb-6 pr-4"
+                    data-i18n="fw-brand-desc">
+                    Specialisten in elektriciteit, ventilatie, en renovatiewerken. Van ruwbouw tot de laatste afwerking,
+                    altijd volgens de regels van de kunst.
+                </p>
+                <div class="flex gap-4 justify-center lg:justify-start">
+                    <a href="#"
+                        class="h-8 w-8 rounded-full border border-stone-200 dark:border-darkline flex items-center justify-center hover:bg-[#e8a020] hover:border-[#e8a020] hover:text-black transition-all text-stone-500 dark:text-darktext"><iconify-icon
+                            icon="lucide:instagram" width="16"></iconify-icon></a>
+                    <a href="#"
+                        class="h-8 w-8 rounded-full border border-stone-200 dark:border-darkline flex items-center justify-center hover:bg-[#e8a020] hover:border-[#e8a020] hover:text-black transition-all text-stone-500 dark:text-darktext"><iconify-icon
+                            icon="lucide:linkedin" width="16"></iconify-icon></a>
+                    <a href="#"
+                        class="h-8 w-8 rounded-full border border-stone-200 dark:border-darkline flex items-center justify-center hover:bg-[#e8a020] hover:border-[#e8a020] hover:text-black transition-all text-stone-500 dark:text-darktext"><iconify-icon
+                            icon="lucide:facebook" width="16"></iconify-icon></a>
+                </div>
+            </div>
+
+            <!-- Location Column -->
+            <div class="lg:col-span-3">
+                <h5 class="text-stone-900 dark:text-lighttext text-xs uppercase tracking-widest font-bold mb-6"
+                    data-i18n="fw-loc-title">Locatie &amp; Werkgebied</h5>
+                <ul class="space-y-4 text-sm text-stone-500 dark:text-darktext">
+                    <li class="flex items-start gap-3 justify-center lg:justify-start">
+                        <iconify-icon icon="lucide:map-pin"
+                            class="text-[#e8a020] text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <span data-i18n="fw-loc-1">Brussel, België</span>
+                    </li>
+                    <li class="flex items-start gap-3 justify-center lg:justify-start">
+                        <iconify-icon icon="lucide:briefcase"
+                            class="text-[#e8a020] text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <span data-i18n="fw-loc-2">Werkgebied: heel België</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Schedule Column -->
+            <div class="lg:col-span-3">
+                <h5 class="text-stone-900 dark:text-lighttext text-xs uppercase tracking-widest font-bold mb-6"
+                    data-i18n="fw-hours-title">Openingsuren</h5>
+                <ul class="space-y-2 text-sm text-stone-500 dark:text-darktext">
+                    <li class="flex justify-between gap-4">
+                        <span data-i18n="fw-hours-weekdays">Ma – Za</span>
+                        <span class="font-medium text-stone-700 dark:text-lighttext">08:00 – 16:00</span>
+                    </li>
+                    <li class="flex justify-between gap-4">
+                        <span data-i18n="fw-hours-sunday">Zondag</span>
+                        <span class="text-stone-400 dark:text-stone-600 italic"
+                            data-i18n="fw-hours-closed">Gesloten</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="lg:col-span-3">
+                <h5 class="text-stone-900 dark:text-lighttext text-xs uppercase tracking-widest font-bold mb-6"
+                    data-i18n="fw-con-title">Contact</h5>
+                <ul class="space-y-4 text-sm text-stone-500 dark:text-darktext">
+                    <li class="flex items-start gap-3 justify-center lg:justify-start">
+                        <iconify-icon icon="lucide:phone" class="text-[#e8a020] text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <div>
+                            <a href="https://wa.me/32465816229" target="_blank" rel="noopener"
+                                class="hover:text-stone-900 dark:hover:text-lighttext transition-colors">
+                                Telefoon / WhatsApp<br><strong>+32 465 81 62 29</strong>
+                            </a>
+                            <p class="text-[10px] text-stone-400 dark:text-stone-600 mt-1 flex items-center gap-1">
+                                <iconify-icon icon="lucide:message-circle" width="10"></iconify-icon>
+                                <span data-i18n="fw-wa-hint">Klik om WhatsApp te openen</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3 justify-center lg:justify-start">
+                        <iconify-icon icon="lucide:mail" class="text-[#e8a020] text-lg shrink-0 mt-0.5"></iconify-icon>
+                        <a href="mailto:arcemiuk.maks@gmail.com"
+                            class="hover:text-stone-900 dark:hover:text-lighttext transition-colors">arcemiuk.maks@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-stone-200/10 dark:border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500 dark:text-darktext">
+            <p data-i18n="fw-copyright">© 2024 Artsemiuk Project. Alle rechten voorbehouden.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-stone-900 dark:hover:text-lighttext transition-colors"
+                    data-i18n="fw-privacy">Privacy Policy</a>
+                <a href="#" class="hover:text-stone-900 dark:hover:text-lighttext transition-colors"
+                    data-i18n="fw-terms">Algemene Voorwaarden</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translation Script -->
+    <script>
+        // ─── Theme Toggle (Desktop) ───────────────────────────────────────────
+        const themeToggleBtn = document.getElementById('themeToggle');
+
+        // Initial check: default to dark if no preference, or respect localStorage
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        function applyThemeToggle() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', applyThemeToggle);
+
+        // ─── Theme Toggle (Mobile) ────────────────────────────────────────────
+        document.getElementById('themeToggleMobile').addEventListener('click', applyThemeToggle);
+
+        // ─── Mobile Menu ──────────────────────────────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            const isOpen = !mobileMenuPanel.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenuPanel.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                mobileMenuPanel.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        // ─── Auto-hide Navbar on Scroll (mobile/tablet only) ─────────────────
+        (function () {
+            const nav = document.querySelector('nav');
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            window.addEventListener('scroll', function () {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        // Only apply on mobile/tablet (< 768px)
+                        if (window.innerWidth < 1024) {
+                            const currentScrollY = window.scrollY;
+                            if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                                // Scrolling DOWN → hide navbar
+                                nav.style.transform = 'translateY(-100%)';
+                                // Also close mobile menu if open
+                                closeMobileMenu();
+                            } else {
+                                // Scrolling UP → show navbar
+                                nav.style.transform = 'translateY(0)';
+                            }
+                            lastScrollY = currentScrollY;
+                        } else {
+                            // Reset on desktop
+                            nav.style.transform = 'translateY(0)';
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        })();
+
+        // ─── Default Language: NL on page load ───────────────────────────────
+        document.addEventListener('DOMContentLoaded', function () {
+            // The page text is already in NL, so we just ensure the label shows NL
+            const langBtnEl = document.getElementById('langBtn');
+            if (langBtnEl) {
+                langBtnEl.innerHTML = 'NL <iconify-icon icon="lucide:chevron-down" width="12"></iconify-icon>';
+            }
+
+            // ─── Service Cards: Tap-to-Expand with Animated Hint ─────────────
+            const serviceSection = document.getElementById('services');
+            if (!serviceSection) return;
+
+            const cards = serviceSection.querySelectorAll('.group.cursor-pointer');
+
+            cards.forEach(function (card) {
+                // Find the expand body container and tag it
+                const expandBody = card.querySelector('.grid-rows-\\[0fr\\]');
+                if (expandBody) {
+                    expandBody.classList.add('card-body');
+                }
+
+                // Add animated chevron hint (only visible if not hovered on desktop)
+                const hint = document.createElement('div');
+                hint.className = 'card-expand-hint mt-auto pt-3 flex justify-end';
+                hint.innerHTML = '<iconify-icon icon="lucide:chevron-down" width="16" class="text-[#e8a020] opacity-50 transition-transform duration-300"></iconify-icon>';
+                card.appendChild(hint);
+
+                // Tap/click → toggle expanded state
+                card.addEventListener('click', function () {
+                    const isExpanded = card.classList.contains('card-expanded');
+                    // Close all other cards first
+                    cards.forEach(function (c) { c.classList.remove('card-expanded'); });
+                    if (!isExpanded) {
+                        card.classList.add('card-expanded');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="translations.js"></script>
+</body>
+
+</html>

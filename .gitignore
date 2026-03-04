@@ -1,0 +1,16 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# PDFs (reference docs, not needed on server)
+*.pdf
+
+# Python helper scripts (not needed for website)
+*.py
+
+# Source/large originals (only the transparent version is used)
+logo mic.png
+
+# Dev notes (not needed on server)
+METAMORFOZA_index.md
+PROFIL_Artsemiuk.md
